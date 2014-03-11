@@ -1,0 +1,41 @@
+1. Make sure the vagrant virtual machine is shutdown.  E.g., in
+   the devopsbootcamp-vagrant folder type 'vagrant halt'.
+2. In your linux host, the start up the VirtualBox GUI.
+3. In the GUI select the devopsbootcamp-vagrant_default
+   virtual machine.
+4. In the VirtualBox toolbar click Start.  The devopsbootcamp
+   virtual machine will start up in a new window. Select this 
+   window.
+5. In the VirtualBox top menu, select Devices->CD/DVD Devices
+   ->Choose a virtual CD/DVD disk file...
+6. Navigage to the VirtualBox application folder in your host
+   file system.  For Ubuntu users this will normally be located
+   at /usr/share/virtualbox.
+7. Select the file VBoxGuestAdditions.iso.
+8. Click Open.
+9. In the devopsbootcamp virtual machine window, login as vagrant.
+10. In the virtual machine window, run
+       sudo yum update
+11. Then run
+       sudo yum install kernel-devel
+12. Reboot by typing
+       sudo halt -p
+13. Repeat step 4 and login in again as vagrant.
+11. Type the following command
+        sudo mount -t iso9660 /dev/cdrom /media
+    The device will be mounted read-only - this is ok.
+12. Type the command
+        cd /media
+    Type ls to see the contents of the iso image you
+    just mounted.
+13. Type the following command
+        sudo ./VBoxLinuxAdditions.run
+    The install will fail for Microsoft Windows specific
+    guest additions.  Since devopsbootcamp is a Linux
+    virtual machine, this is not an issue.
+14. Shutdown the devopbootcamp virtual machine by typing
+        halt -p
+15. Test everything by going to your vagrant folder and
+    starting up using vagrant, e.g., vagrant up.  The
+    guest additions warnings should not appear.
+
