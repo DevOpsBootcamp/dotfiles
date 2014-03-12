@@ -26,7 +26,7 @@
     The device will be mounted read-only - this is ok.
 12. Type the command
         cd /media
-    Type ls to see the contents of the iso image you
+    Type 'ls' to see the contents of the iso image you
     just mounted.
 13. Type the following command
         sudo ./VBoxLinuxAdditions.run
